@@ -1,2 +1,1 @@
-# continuous-delivery
-Stuff about CD
+# JUnit 指南
