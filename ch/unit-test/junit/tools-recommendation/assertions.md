@@ -82,10 +82,31 @@ class ShouldBeTests : Spek({
  IDE 友好程度 | 需要记忆各种 Matcher 的名字 | Fluent 风格直接可以代码补全 | AssertJ 更好
  浮点数支持 | `closeTo()` | 除了`isCloseTo`，还有`isBetween()`| AssertJ 更好
  集合支持 | 支持基本的`hasSize`、`hasItem` | 除了基本断言之外，还有`filter`等过滤方法，支持 lambda 语法（3.+版本）| AssertJ 更强大 
- 异常支持 | 需要`try {...} catch (Exception e) {...}`并在`catch`子句中断言，没有传么的短言 | `assertThatThrownBy`接受一个 lambda 代替`try...catch...`，还额外提供了`hasCause()`、`hasMessage()`等额外断言方法 | AssertJ 更好
+ 异常支持 | 需要`try {...} catch (Exception e) {...}`并在`catch`子句中断言，没有专门的断言 | `assertThatThrownBy`接受一个 lambda 代替`try...catch...`，还额外提供了`hasCause()`、`hasMessage()`等额外断言方法 | AssertJ 更好
  错误信息 |  |  | 相当 
  自定义断言 | 实现`BaseMatcher` | 提供生成器自动生成 POJO 对象的自定义断言 | AssertJ 更好 
  与其他库配合 | `Mockito.argThat()`直接接受如`eq()`之类的 Matcher | 支持通过`AssertionMatcher`转换成`argThat`支持的Matcher | Hamcrest 更好
  特殊功能 | 有其他语言语言版本（学习曲线平缓） | "Soft" 断言、Predicate 断言、JUnit 和 TestNG 断言的自动迁移 | AssertJ 更好
 
-可以看到，作为新兴的断言库，AssertJ 简化了不方便和低效的写法，而且还在不断的增加更加丰富的断言，如果现在选择纯 Java 语言的断言库，AssertJ应该是首选。
+可以看到，作为新兴的断言库，AssertJ 简化了不方便和低效的写法，而且还在不断的增加更加丰富的断言，如果现在选择纯 Java 语言的断言库，AssertJ应该是首选。使用起来非常简单，增加 AssertJ 依赖，使用`assertThat(objectUnderTest)`方法把要验证的“actual”对象传给它，剩下的就交给 IDE 了。
+
+Maven 依赖：
+```xml
+<dependency>
+  <groupId>org.assertj</groupId>
+  <artifactId>assertj-core</artifactId>
+  <!-- use 2.8.0 for Java 7 projects -->
+  <version>3.8.0</version>
+  <scope>test</scope>
+</dependency>
+```
+
+代码示例：
+```java
+// 导入入口静态方法 assertThat 以及其它
+import static org.assertj.core.api.Assertions.*;
+...
+assertThat(objectUnderTest). // 这里就有 IDE 的代码补全提示了
+```
+
+> Eclipse 可以配置`Content Assist -> Favorites`增加`org.assertj.core.api.Assertions`方便使用自动的静态导入。
