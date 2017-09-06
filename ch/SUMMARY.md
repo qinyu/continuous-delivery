@@ -10,5 +10,6 @@
         - [Eclipse](unit-test/junit/ide-tips/eclipse.md)
         - [IntelliJ IDEA](unit-test/junit/ide-tips/intellij.md)
     - [工具推荐](unit-test/junit/tools-recommendations.md)
+        - [断言](unit-test/junit/tools-recommendation/assertions.md)
 * [遗留项目实施步骤]
      

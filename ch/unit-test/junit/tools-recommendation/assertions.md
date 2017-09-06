@@ -1,4 +1,4 @@
-## 断言库
+## 断言
 
 断言需要清楚准确地表述如何对测试结果进行验证，同时应该尽量保持简洁，让开发者专注于设计和编写`actual`与`expected`。书写断言的工具类已经成为测试框架中重要的一部分。一些 JVM 语言的测试框架的断言已经是非常接近自然语言的 DSL 了。
 
@@ -83,9 +83,9 @@ class ShouldBeTests : Spek({
  浮点数支持 | `closeTo()` | 除了`isCloseTo`，还有`isBetween()`| AssertJ 更好
  集合支持 | 支持基本的`hasSize`、`hasItem` | 除了基本断言之外，还有`filter`等过滤方法，支持 lambda 语法（3.+版本）| AssertJ 更强大 
  异常支持 | 需要`try {...} catch (Exception e) {...}`并在`catch`子句中断言，没有传么的短言 | `assertThatThrownBy`接受一个 lambda 代替`try...catch...`，还额外提供了`hasCause()`、`hasMessage()`等额外断言方法 | AssertJ 更好
- 错误信息 |  | 相当 
+ 错误信息 |  |  | 相当 
  自定义断言 | 实现`BaseMatcher` | 提供生成器自动生成 POJO 对象的自定义断言 | AssertJ 更好 
  与其他库配合 | `Mockito.argThat()`直接接受如`eq()`之类的 Matcher | 支持通过`AssertionMatcher`转换成`argThat`支持的Matcher | Hamcrest 更好
  特殊功能 | 有其他语言语言版本（学习曲线平缓） | "Soft" 断言、Predicate 断言、JUnit 和 TestNG 断言的自动迁移 | AssertJ 更好
 
-可以看到，作为新兴的断言库，AssertJ 解决了不方便和低效的写法，而且还在不断的增加更加丰富的断言，如果现在选择纯 Java 语言的断言库，AssertJ应该是首选。
+可以看到，作为新兴的断言库，AssertJ 简化了不方便和低效的写法，而且还在不断的增加更加丰富的断言，如果现在选择纯 Java 语言的断言库，AssertJ应该是首选。
