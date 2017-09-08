@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- '0.11'
+- '0.10'
+deploy:
+  provider: releases
+  api_key:
+    secure: epcZjSmgtvPQ1X0cTxSPq+DM5aBveAp+47CjY7rDFomkIlUHJ+i4KFR1ifHdWgs/YEjWbx9mIj3Wwzi5MocG8mBMLSL74zwEHIaYchdqureg+nlXLAXneBv6eO2/OVItcvk8k+yPRanL1KV/MwCQ0nJILpXNIO0OgTS8HBSfAMffPSoRtHGIQpJ6MIFc+MGh9uGbO1uOE5wEX8k0JJr8MBCpij0cmgSlD86xVJM/UYiC4fiaiSF391QXdkni0gL1B7uOwQJF8hiW2kdE6fv/AXBBNJ9S5McbkRzvQ9kkamb1bDIIQeSoPnt/xrnDl0m/g5lSHdqXaOwsNGAe+M+gZWOGMR7eMQpPHkk5lXNX6xfTkqJU17Az6tR7EeCEZnUF/vCRAcT30bOFrsoF73TKUNn9zNNLAExfS8l5uO1c0Y1pcA50lwZxKkDFWgIeq5cqc+gbmN5DymoiX/45DtKXnLjSj/pCW2CTunHVG0Xjfhtdnh5+kMXvR/GTNj5Tu6CPIvrKCGcpej/FKOWEtA6r4jOfT3TuZz+2hUVeoNjE5JirzYE7sbXE0WnSyUtdTxgMRBmYWYQbRibdZemiMVQH88lcRHNGkHu+eGqB3u3LWNnb7cBluaAtcUJJF5VaeuB6rwblD90JYh99ZN+rt/msgowQe+SJqJCvwNBFVSfhRBc=
+  file: ''
+  on:
+    repo: qinyu/continuous-delivery-guidelines
